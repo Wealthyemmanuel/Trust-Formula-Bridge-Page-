@@ -13,8 +13,8 @@ import {
 
 const AFFILIATE_URL = "https://internetwealthtraining.selar.com/page/2k?affiliate=qd6e";
 
-// Image assets generated for the training
-const BLUEPRINT_BUNDLE_IMG = "/src/assets/images/blueprint_resource_bundle_1790218664582.jpg";
+// Image asset bundled by Vite
+import BLUEPRINT_BUNDLE_IMG from './assets/images/blueprint_resource_bundle_1790218664582.jpg';
 
 export default function App() {
   const [showStickyBar, setShowStickyBar] = useState(false);
