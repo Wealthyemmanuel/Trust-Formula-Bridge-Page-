@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {
   CheckCircle2,
   ArrowRight,
-  Mail,
-  MessageSquare,
-  Sparkles,
-  HelpCircle,
   Share2,
   ShieldCheck,
   Check
@@ -18,7 +14,6 @@ import BLUEPRINT_BUNDLE_IMG from './assets/images/blueprint_resource_bundle_1790
 
 export default function App() {
   const [showStickyBar, setShowStickyBar] = useState(false);
-  const [emailHelpOpen, setEmailHelpOpen] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
 
   // Scroll listener for sticky quick-action bar
@@ -42,93 +37,26 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-red-600 selection:text-white">
-      
-      {/* Top Header Notification Bar */}
-      <div className="bg-slate-50 border-b border-slate-200 px-4 py-2.5 text-xs text-slate-700">
-        <div className="max-w-4xl mx-auto flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse" />
-            <span className="font-bold text-slate-900 tracking-wide">Step 1 Completed:</span>
-            <span className="text-slate-600 hidden sm:inline">The Trust Formula has been sent to your inbox & WhatsApp</span>
-            <span className="text-slate-600 sm:hidden">Formula sent to inbox</span>
-          </div>
-
-          <button
-            onClick={() => setEmailHelpOpen(!emailHelpOpen)}
-            className="text-red-600 hover:text-red-700 transition-colors font-bold flex items-center gap-1 cursor-pointer shrink-0"
-          >
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Didn&apos;t get it?</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Expandable deliverability helper drawer */}
-      {emailHelpOpen && (
-        <div className="bg-red-50/60 border-b border-red-200 px-4 py-3.5 text-xs text-slate-700 animate-fadeIn">
-          <div className="max-w-4xl mx-auto space-y-2">
-            <div className="flex items-center justify-between text-slate-900 font-semibold">
-              <span className="flex items-center gap-1.5 text-red-700 font-bold">
-                <Mail className="w-4 h-4 text-red-600" /> Quick Delivery Check
-              </span>
-              <button
-                onClick={() => setEmailHelpOpen(false)}
-                className="text-slate-500 hover:text-slate-900 cursor-pointer text-xs font-semibold"
-              >
-                Close ×
-              </button>
-            </div>
-            <p className="text-slate-600 leading-relaxed">
-              1. <strong>Gmail users:</strong> Check your <em>Promotions</em> or <em>Spam</em> tab and drag our message to Primary so you don&apos;t miss updates.<br />
-              2. <strong>WhatsApp users:</strong> If you requested access via WhatsApp, check your latest chats or search &ldquo;Trust Formula&rdquo;.<br />
-              3. Meanwhile, watch the important orientation video below right now.
-            </p>
-          </div>
-        </div>
-      )}
 
       {/* Main Container */}
       <main className="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14 space-y-12 md:space-y-16">
         
-        {/* HERO SECTION */}
-        <section className="text-center space-y-6">
-          <div className="inline-flex items-center gap-2 text-xs font-bold tracking-wider uppercase text-red-700 bg-red-50 border border-red-200 px-4 py-1.5 rounded-full shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-red-600" />
-            <span>Special Access Session</span>
-          </div>
-
+        {/* HERO SECTION - HEADLINE & SUBHEADLINE ONLY */}
+        <section className="text-center space-y-6 max-w-3xl mx-auto pt-2 sm:pt-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-slate-950 tracking-tight leading-[1.15] text-balance font-display">
             Hey, You’ve Just Gotten The Trust Formula…
           </h1>
 
-          <div className="max-w-2xl mx-auto space-y-3.5 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
+          <div className="space-y-4 text-base sm:text-lg text-slate-700 font-normal leading-relaxed">
             <p>
               If you haven&apos;t received it yet, check your email or WhatsApp.
             </p>
-            <p className="text-slate-900 font-bold">
+            <p className="text-slate-950 font-bold">
               That&apos;s where you&apos;ll find the Trust Formula I promised you.
             </p>
             <p className="text-slate-600 text-sm sm:text-base">
               Take some time to go through it because understanding how to build trust can completely change the way you approach selling online.
             </p>
-          </div>
-
-          {/* Quick confirmation chips */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2 text-xs text-slate-600">
-            <div className="flex items-center gap-1.5">
-              <Mail className="w-4 h-4 text-red-600" />
-              <span className="font-medium text-slate-800">Delivered via Email</span>
-            </div>
-            <span className="text-slate-300">·</span>
-            <div className="flex items-center gap-1.5">
-              <MessageSquare className="w-4 h-4 text-red-600" />
-              <span className="font-medium text-slate-800">Delivered via WhatsApp</span>
-            </div>
-            <span className="text-slate-300">·</span>
-            <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-red-600" />
-              <span className="text-red-700 font-bold">Watch Video Below Before Leaving</span>
-            </div>
           </div>
         </section>
 
@@ -150,36 +78,17 @@ export default function App() {
             </div>
           </div>
 
-          {/* BUTTON UNDER VIDEO NOTE */}
-          <div className="bg-white border-2 border-slate-200 hover:border-red-300 transition-colors rounded-2xl p-6 sm:p-8 text-center space-y-5 shadow-xl shadow-slate-200/50 relative overflow-hidden">
-            {/* Top red brand bar */}
-            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-red-600 via-red-500 to-red-600" />
-
-            {/* Note text under video */}
-            <div className="space-y-1.5 pt-1">
-              <p className="text-xs uppercase tracking-widest font-extrabold text-red-600">
-                Action Required
-              </p>
-              <p className="text-base sm:text-lg font-bold text-slate-900">
-                Once you finish watching, click below to access the full blueprint presentation:
-              </p>
-            </div>
-
-            {/* THE REDIRECT BUTTON */}
-            <div>
-              <a
-                href={AFFILIATE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-extrabold text-base sm:text-lg rounded-xl shadow-xl shadow-red-600/30 hover:shadow-red-600/45 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
-              >
-                <span>SEE THE 0–$2K BLUEPRINT</span>
-                <ArrowRight className="w-5 h-5 stroke-[2.5]" />
-              </a>
-              <p className="text-xs text-slate-500 mt-2.5 font-medium">
-                Click below to see the full details.
-              </p>
-            </div>
+          {/* BUTTON UNDER VIDEO */}
+          <div className="text-center pt-2 sm:pt-4">
+            <a
+              href={AFFILIATE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-extrabold text-base sm:text-lg rounded-xl shadow-xl shadow-red-600/30 hover:shadow-red-600/45 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
+            >
+              <span>SEE THE 0–$2K BLUEPRINT</span>
+              <ArrowRight className="w-5 h-5 stroke-[2.5]" />
+            </a>
           </div>
         </section>
 
